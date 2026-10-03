@@ -1,0 +1,3 @@
+<FilesMatch "^(config\.php|bootstrap\.php|schema\.json)$">
+Require all denied
+</FilesMatch>

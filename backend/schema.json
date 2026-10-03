@@ -1,0 +1,739 @@
+{
+  "estudiantes": {
+    "pk": "id_estudiante",
+    "fields": {
+      "apellidos": {
+        "label": "Apellidos",
+        "type": "text",
+        "required": true,
+        "max": 100
+      },
+      "nombres": {
+        "label": "Nombres",
+        "type": "text",
+        "required": true,
+        "max": 100
+      },
+      "dni": {
+        "label": "DNI",
+        "type": "text",
+        "required": false,
+        "max": 8,
+        "pattern": "[0-9]{8}"
+      },
+      "grado": {
+        "label": "Grado",
+        "type": "text",
+        "required": true,
+        "max": 20
+      },
+      "seccion": {
+        "label": "Sección",
+        "type": "text",
+        "required": true,
+        "max": 10
+      },
+      "direccion": {
+        "label": "Dirección completa (Mz., lote, calle y número)",
+        "type": "text",
+        "required": false,
+        "max": 200
+      },
+      "zona": {
+        "label": "Zona",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "distrito": {
+        "label": "Distrito",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "telefono_fijo": {
+        "label": "Teléfono fijo",
+        "type": "text",
+        "required": false,
+        "max": 20
+      },
+      "fecha_nacimiento": {
+        "label": "Fecha de nacimiento",
+        "type": "date",
+        "required": false
+      },
+      "lugar_como_hijo": {
+        "label": "Lugar que ocupa como hijo",
+        "type": "number",
+        "required": false,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "total_hermanos_casa": {
+        "label": "Hermanos que viven en casa",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 2147483647,
+        "step": "1",
+        "default": 0
+      },
+      "con_quien_vive": {
+        "label": "¿Con quién vive?",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "codigo": {
+        "label": "Código interno (opcional)",
+        "type": "text",
+        "required": false,
+        "max": 30
+      }
+    }
+  },
+  "apoderados": {
+    "pk": "id_apoderado",
+    "fields": {
+      "id_estudiante": {
+        "label": "Estudiante",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "tipo_apoderado": {
+        "label": "Parentesco",
+        "type": "select",
+        "required": true,
+        "options": [
+          "PADRE",
+          "MADRE",
+          "PADRE_POLITICO",
+          "MADRE_POLITICA",
+          "CONVIVIENTE",
+          "TIO",
+          "TIA",
+          "ABUELO",
+          "ABUELA",
+          "OTRO"
+        ]
+      },
+      "nombres_apellidos": {
+        "label": "Nombres y apellidos",
+        "type": "text",
+        "required": true,
+        "max": 150
+      },
+      "dni": {
+        "label": "DNI",
+        "type": "text",
+        "required": false,
+        "max": 8,
+        "pattern": "[0-9]{8}"
+      },
+      "telefono_fijo": {
+        "label": "Teléfono fijo",
+        "type": "text",
+        "required": false,
+        "max": 20
+      },
+      "celular": {
+        "label": "Celular",
+        "type": "text",
+        "required": false,
+        "max": 20
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "type": "email",
+        "required": false,
+        "max": 120
+      },
+      "direccion": {
+        "label": "Dirección completa (Mz., lote, calle y número)",
+        "type": "text",
+        "required": false,
+        "max": 200
+      },
+      "distrito": {
+        "label": "Distrito",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "fecha_nacimiento": {
+        "label": "Fecha de nacimiento",
+        "type": "date",
+        "required": false
+      },
+      "estado_civil": {
+        "label": "Estado civil",
+        "type": "select",
+        "required": false,
+        "options": [
+          "CASADO",
+          "CASADA",
+          "CONVIVIENTE",
+          "SOLTERO",
+          "SOLTERA",
+          "VIUDO",
+          "VIUDA",
+          "SEPARADO",
+          "SEPARADA",
+          "DIVORCIADO",
+          "DIVORCIADA",
+          "OTRO"
+        ]
+      },
+      "grado_instruccion": {
+        "label": "Grado de instrucción",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "profesion": {
+        "label": "Profesión",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "oficio_ocupacion": {
+        "label": "Oficio u ocupación",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "descripcion_trabajo": {
+        "label": "Descripción del trabajo",
+        "type": "text",
+        "required": false,
+        "max": 180
+      },
+      "tipo_trabajo": {
+        "label": "Tipo de trabajo",
+        "type": "select",
+        "required": false,
+        "options": [
+          "FIJO",
+          "EMPRESA",
+          "INDEPENDIENTE",
+          "EVENTUAL",
+          "OTRO"
+        ]
+      },
+      "empresa": {
+        "label": "Empresa",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "ingreso_trabajo": {
+        "label": "Ingreso por trabajo (S/)",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 99999999.99,
+        "step": "0.01",
+        "default": 0
+      },
+      "otros_ingresos": {
+        "label": "Otros ingresos (S/)",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 99999999.99,
+        "step": "0.01",
+        "default": 0
+      },
+      "total_ingresos": {
+        "label": "Total de ingresos (S/)",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 99999999.99,
+        "step": "0.01",
+        "default": 0
+      },
+      "horario_desde": {
+        "label": "Horario de trabajo: desde",
+        "type": "time",
+        "required": false
+      },
+      "horario_hasta": {
+        "label": "Horario de trabajo: hasta",
+        "type": "time",
+        "required": false
+      },
+      "horas_diarias": {
+        "label": "Horas de trabajo al día",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 24,
+        "step": "0.01"
+      },
+      "trabajo_rotativo": {
+        "label": "¿Trabajo rotativo?",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "tiene_seguro": {
+        "label": "¿Tiene seguro?",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "seguro": {
+        "label": "Seguro",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "fallecido": {
+        "label": "¿Ha fallecido?",
+        "type": "boolean",
+        "required": false
+      },
+      "vive_otra_direccion": {
+        "label": "¿Vive en otra dirección?",
+        "type": "boolean",
+        "required": false
+      },
+      "parentesco_otro": {
+        "label": "Otro parentesco: especifique",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "colaborador_acjg": {
+        "label": "¿Colaborador de ACJG?",
+        "type": "boolean",
+        "required": false
+      }
+    }
+  },
+  "profesores": {
+    "pk": "id_profesor",
+    "fields": {
+      "nombres": {
+        "label": "Nombres",
+        "type": "text",
+        "required": true,
+        "max": 100
+      },
+      "apellidos": {
+        "label": "Apellidos",
+        "type": "text",
+        "required": true,
+        "max": 100
+      },
+      "dni": {
+        "label": "DNI",
+        "type": "text",
+        "required": false,
+        "max": 8,
+        "pattern": "[0-9]{8}"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "type": "email",
+        "required": false,
+        "max": 120
+      },
+      "telefono": {
+        "label": "Teléfono",
+        "type": "text",
+        "required": false,
+        "max": 20
+      },
+      "cargo": {
+        "label": "Cargo",
+        "type": "text",
+        "required": false,
+        "max": 60
+      },
+      "estado": {
+        "label": "¿Profesor activo?",
+        "type": "boolean",
+        "required": false,
+        "default": 1
+      },
+      "codigo": {
+        "label": "Código interno (opcional)",
+        "type": "text",
+        "required": false,
+        "max": 30
+      },
+      "curso": {
+        "label": "Curso",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "seccion": {
+        "label": "Sección",
+        "type": "text",
+        "required": false,
+        "max": 10
+      }
+    }
+  },
+  "visitas": {
+    "pk": "id_visita",
+    "fields": {
+      "id_estudiante": {
+        "label": "Estudiante",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "id_profesor": {
+        "label": "Profesor responsable",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "fecha_visita": {
+        "label": "Fecha de visita",
+        "type": "date",
+        "required": true
+      },
+      "ambiente_individual": {
+        "label": "¿Duerme en un ambiente individual?",
+        "type": "boolean",
+        "required": false
+      },
+      "cama_propia": {
+        "label": "¿Tiene cama propia?",
+        "type": "boolean",
+        "required": false
+      },
+      "responsable_matricula": {
+        "label": "Responsable de la matrícula",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "quien_controla_tareas": {
+        "label": "¿Quién controla las tareas?",
+        "type": "text",
+        "required": false,
+        "max": 120
+      },
+      "lugar_estudio": {
+        "label": "Lugar donde estudia",
+        "type": "text",
+        "required": false,
+        "max": 120
+      },
+      "quien_supervisa_quehaceres": {
+        "label": "¿Quién supervisa sus quehaceres?",
+        "type": "text",
+        "required": false,
+        "max": 120
+      },
+      "responsabilidades": {
+        "label": "Responsabilidades",
+        "type": "text",
+        "required": false,
+        "max": 200
+      },
+      "trabaja": {
+        "label": "¿El estudiante trabaja?",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "actividad": {
+        "label": "Actividad",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "correo_responsable": {
+        "label": "Correo del responsable de matrícula",
+        "type": "email",
+        "required": false,
+        "max": 120
+      },
+      "observaciones": {
+        "label": "Observaciones",
+        "type": "textarea",
+        "required": false,
+        "max": 10000
+      },
+      "motivo": {
+        "label": "Motivo",
+        "type": "text",
+        "required": false,
+        "max": 120
+      },
+      "estado": {
+        "label": "Estado",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Pendiente",
+          "Programada",
+          "Realizada",
+          "Cancelada"
+        ],
+        "default": "Realizada"
+      }
+    }
+  },
+  "salud": {
+    "pk": "id_salud",
+    "fields": {
+      "id_visita": {
+        "label": "Visita",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "tiene_necesidad": {
+        "label": "¿Presenta una necesidad en su aprendizaje?",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "diagnostico": {
+        "label": "Diagnóstico",
+        "type": "textarea",
+        "required": false,
+        "max": 10000
+      },
+      "lugar_tratamiento": {
+        "label": "Lugar del tratamiento",
+        "type": "text",
+        "required": false,
+        "max": 200
+      },
+      "tratamiento_terapia": {
+        "label": "Tratamiento o terapia",
+        "type": "textarea",
+        "required": false,
+        "max": 10000
+      }
+    }
+  },
+  "vivienda": {
+    "pk": "id_vivienda",
+    "fields": {
+      "id_visita": {
+        "label": "Visita",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "tenencia": {
+        "label": "Tenencia",
+        "type": "select",
+        "required": false,
+        "options": [
+          "PROPIA",
+          "ALQUILADA",
+          "ALOJADO",
+          "GUARDIANIA",
+          "OTRO"
+        ]
+      },
+      "monto_alquiler": {
+        "label": "Alquiler mensual (S/)",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 99999999.99,
+        "step": "0.01"
+      },
+      "tipo_vivienda": {
+        "label": "Tipo de vivienda",
+        "type": "select",
+        "required": false,
+        "options": [
+          "UNIFAMILIAR",
+          "MULTIFAMILIAR",
+          "OTRO"
+        ]
+      },
+      "material": {
+        "label": "Material",
+        "type": "select",
+        "required": false,
+        "options": [
+          "NOBLE",
+          "ADOBE",
+          "ESTERA",
+          "MADERA",
+          "OTRO"
+        ]
+      },
+      "material_otro": {
+        "label": "Otro material: especifique",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "agua_red": {
+        "label": "Agua de la red",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "desague": {
+        "label": "Desagüe",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "luz": {
+        "label": "Luz",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "cable": {
+        "label": "Cable",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "internet": {
+        "label": "Internet",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "telefono_fijo": {
+        "label": "Teléfono fijo",
+        "type": "boolean",
+        "required": false,
+        "default": 0
+      },
+      "cantidad_celulares": {
+        "label": "Celulares en la familia",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 2147483647,
+        "step": "1",
+        "default": 0
+      },
+      "servicio_higienico": {
+        "label": "Servicio higiénico",
+        "type": "select",
+        "required": false,
+        "options": [
+          "INDEPENDIENTE",
+          "COMUN",
+          "SILO",
+          "OTRO"
+        ]
+      },
+      "orden": {
+        "label": "Orden",
+        "type": "select",
+        "required": false,
+        "options": [
+          "BUENO",
+          "REGULAR",
+          "DEFICIENTE"
+        ]
+      },
+      "limpieza": {
+        "label": "Limpieza",
+        "type": "select",
+        "required": false,
+        "options": [
+          "BUENO",
+          "REGULAR",
+          "DEFICIENTE"
+        ]
+      },
+      "mobiliario": {
+        "label": "Mobiliario",
+        "type": "select",
+        "required": false,
+        "options": [
+          "BUENO",
+          "REGULAR",
+          "DEFICIENTE"
+        ]
+      }
+    }
+  },
+  "area_espiritual": {
+    "pk": "id_area",
+    "fields": {
+      "id_visita": {
+        "label": "Visita",
+        "type": "number",
+        "required": true,
+        "min": 1,
+        "max": 2147483647,
+        "step": "1"
+      },
+      "persona": {
+        "label": "Persona",
+        "type": "select",
+        "required": true,
+        "options": [
+          "PADRE",
+          "MADRE",
+          "HIJO"
+        ]
+      },
+      "confesion_religiosa": {
+        "label": "Confesión religiosa",
+        "type": "text",
+        "required": false,
+        "max": 100
+      },
+      "asiste_iglesia": {
+        "label": "¿Asiste permanentemente a una iglesia?",
+        "type": "boolean",
+        "required": false
+      },
+      "nombre_iglesia": {
+        "label": "Nombre de la iglesia",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "lugar": {
+        "label": "Lugar",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "es_miembro": {
+        "label": "¿Es miembro?",
+        "type": "boolean",
+        "required": false
+      },
+      "nombre_pastor_sacerdote": {
+        "label": "Nombre del pastor o sacerdote",
+        "type": "text",
+        "required": false,
+        "max": 150
+      },
+      "participo_campamento": {
+        "label": "¿Ha participado en un campamento?",
+        "type": "boolean",
+        "required": false
+      }
+    }
+  }
+}
