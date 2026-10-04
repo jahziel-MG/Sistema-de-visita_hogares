@@ -2504,3 +2504,2107 @@ button.danger:hover,
     }
 
 }
+
+/* =========================================================
+   IEP JOHANNES GUTENBERG
+   REDISEÑO VISUAL COMPLETO
+   SOLO ESTILOS - NO MODIFICA LA LÓGICA
+   ========================================================= */
+
+:root {
+    --primary: #0B3154;
+    --primary-dark: #082640;
+    --primary-soft: #EAF1F7;
+
+    --school-blue: #0B3154;
+    --school-yellow: #F4C928;
+    --school-yellow-soft: #FFF8D9;
+    --school-red: #C92727;
+
+    --bg: #F4F7FA;
+    --surface: #FFFFFF;
+    --surface-soft: #F8FAFC;
+
+    --text: #162536;
+    --text-light: #667789;
+    --line: #DCE4EB;
+
+    --shadow-sm: 0 2px 8px rgba(11, 49, 84, .07);
+    --shadow-md: 0 10px 30px rgba(11, 49, 84, .10);
+    --shadow-lg: 0 18px 45px rgba(11, 49, 84, .14);
+
+    --radius: 14px;
+    --radius-sm: 10px;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(244, 201, 40, .08),
+            transparent 30%
+        ),
+        var(--bg);
+    color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   MARCA / LOGO
+   ========================================================= */
+
+.brand {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+
+    padding: 20px 18px 18px !important;
+
+    border-bottom: 2px solid rgba(244, 201, 40, .75) !important;
+}
+
+/* Elimina la línea que anteriormente cruzaba el nombre */
+.brand::after {
+    display: none !important;
+}
+
+.brand-logo {
+    width: 54px !important;
+    height: 54px !important;
+
+    object-fit: contain !important;
+
+    flex-shrink: 0;
+
+    filter:
+        drop-shadow(0 3px 5px rgba(0, 0, 0, .20));
+
+    transition: transform .2s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.04);
+}
+
+.brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+}
+
+.brand-text strong {
+    color: #FFFFFF !important;
+
+    font-size: .98rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -.01em;
+}
+
+.brand-text small {
+    color: rgba(255, 255, 255, .70) !important;
+
+    font-size: .70rem !important;
+    font-weight: 500 !important;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    background:
+        linear-gradient(
+            180deg,
+            #0B3154 0%,
+            #082640 100%
+        ) !important;
+
+    box-shadow:
+        8px 0 28px rgba(8, 38, 64, .13);
+
+    border-right: 1px solid rgba(255,255,255,.05);
+}
+
+.nav-label {
+    color: rgba(255,255,255,.48) !important;
+
+    font-size: .66rem !important;
+    font-weight: 800 !important;
+
+    letter-spacing: .12em;
+}
+
+.sidebar nav a {
+    position: relative;
+
+    margin: 4px 10px !important;
+    padding: 11px 13px !important;
+
+    border-radius: 10px !important;
+
+    color: rgba(255,255,255,.72) !important;
+
+    font-weight: 600 !important;
+
+    transition:
+        background .18s ease,
+        color .18s ease,
+        transform .18s ease;
+}
+
+.sidebar nav a:hover {
+    background: rgba(255,255,255,.09) !important;
+    color: #FFFFFF !important;
+
+    transform: translateX(2px);
+}
+
+.sidebar nav a.active {
+    background:
+        linear-gradient(
+            90deg,
+            #F4C928,
+            #FFD94E
+        ) !important;
+
+    color: #082640 !important;
+
+    font-weight: 800 !important;
+
+    box-shadow:
+        0 5px 14px rgba(244, 201, 40, .20);
+}
+
+.sidebar nav a.active svg {
+    color: #082640 !important;
+}
+
+.sidebar-bottom {
+    margin: 15px !important;
+    padding: 14px !important;
+
+    border: 1px solid rgba(244,201,40,.18) !important;
+    border-radius: 12px !important;
+
+    background: rgba(255,255,255,.045) !important;
+
+    color: rgba(255,255,255,.58) !important;
+
+    font-size: .72rem !important;
+    line-height: 1.55;
+}
+
+.sidebar-bottom strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #F4C928 !important;
+
+    font-size: .76rem;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+
+.topbar {
+    min-height: 72px !important;
+
+    background: rgba(255,255,255,.96) !important;
+
+    border-bottom: 1px solid var(--line) !important;
+
+    box-shadow: 0 2px 10px rgba(11,49,84,.045);
+
+    backdrop-filter: blur(12px);
+}
+
+.topbar-left {
+    color: var(--text-light) !important;
+}
+
+.topbar-left strong {
+    color: var(--primary) !important;
+}
+
+.identity {
+    gap: 10px !important;
+}
+
+.identity strong {
+    color: var(--primary) !important;
+}
+
+.identity small {
+    color: var(--text-light) !important;
+}
+
+.avatar {
+    width: 38px !important;
+    height: 38px !important;
+
+    border: 2px solid var(--school-yellow) !important;
+
+    background: var(--primary) !important;
+
+    color: #FFFFFF !important;
+
+    font-weight: 800 !important;
+
+    box-shadow: 0 3px 8px rgba(11,49,84,.15);
+}
+
+.logout {
+    color: var(--primary) !important;
+
+    border-radius: 9px !important;
+
+    transition: .18s ease;
+}
+
+.logout:hover {
+    background: #FFF1F1 !important;
+    color: var(--school-red) !important;
+}
+
+
+/* =========================================================
+   CONTENIDO GENERAL
+   ========================================================= */
+
+#content {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.page-heading {
+    margin-bottom: 24px !important;
+}
+
+.page-heading h1 {
+    color: var(--primary) !important;
+
+    font-size: clamp(1.55rem, 2vw, 2rem) !important;
+
+    font-weight: 850 !important;
+
+    letter-spacing: -.035em;
+}
+
+.page-heading p {
+    color: var(--text-light) !important;
+
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+button,
+.button {
+    border-radius: 9px !important;
+
+    font-weight: 700 !important;
+
+    transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        background .16s ease;
+}
+
+button:hover,
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.primary {
+    background:
+        linear-gradient(
+            135deg,
+            #0B3154,
+            #10456F
+        ) !important;
+
+    border-color: #0B3154 !important;
+
+    color: #FFFFFF !important;
+
+    box-shadow:
+        0 5px 14px rgba(11,49,84,.18);
+}
+
+.primary:hover {
+    background: #082640 !important;
+
+    box-shadow:
+        0 8px 18px rgba(11,49,84,.23);
+}
+
+.button {
+    background: #FFFFFF !important;
+
+    border: 1px solid var(--line) !important;
+
+    color: var(--primary) !important;
+}
+
+.button:hover {
+    border-color: var(--school-yellow) !important;
+
+    background: var(--school-yellow-soft) !important;
+}
+
+.danger {
+    background: #FFF1F1 !important;
+
+    border: 1px solid #F0C7C7 !important;
+
+    color: var(--school-red) !important;
+}
+
+.danger:hover {
+    background: #FFE2E2 !important;
+}
+
+
+/* =========================================================
+   TARJETAS / PANELES
+   ========================================================= */
+
+.panel {
+    background: var(--surface) !important;
+
+    border: 1px solid var(--line) !important;
+
+    border-radius: var(--radius) !important;
+
+    box-shadow: var(--shadow-sm) !important;
+
+    overflow: hidden;
+
+    transition:
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.panel:hover {
+    box-shadow: var(--shadow-md) !important;
+}
+
+.panel-head {
+    padding: 20px 22px !important;
+
+    border-bottom: 1px solid var(--line) !important;
+}
+
+.panel-head h2 {
+    color: var(--primary) !important;
+
+    font-size: 1.05rem !important;
+
+    font-weight: 800 !important;
+}
+
+.panel-head p {
+    color: var(--text-light) !important;
+}
+
+
+/* =========================================================
+   INICIO / DASHBOARD
+   ========================================================= */
+
+.stats {
+    gap: 16px !important;
+
+    margin-bottom: 24px;
+}
+
+.stat {
+    position: relative;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid var(--line) !important;
+
+    border-radius: 14px !important;
+
+    padding: 20px !important;
+
+    box-shadow: var(--shadow-sm) !important;
+
+    overflow: hidden;
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.stat::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: var(--school-yellow);
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-md) !important;
+}
+
+.stat-top {
+    color: var(--text-light) !important;
+
+    font-weight: 700 !important;
+}
+
+.stat-icon {
+    width: 38px !important;
+    height: 38px !important;
+
+    border-radius: 10px !important;
+
+    background: var(--primary-soft) !important;
+
+    color: var(--primary) !important;
+}
+
+.stat .number {
+    margin: 8px 0 2px !important;
+
+    color: var(--primary) !important;
+
+    font-size: 2rem !important;
+
+    font-weight: 850 !important;
+}
+
+.stat small {
+    color: var(--text-light) !important;
+}
+
+.note {
+    border: 1px solid rgba(244,201,40,.30) !important;
+
+    border-radius: 14px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF2,
+            #FFF8D9
+        ) !important;
+
+    box-shadow: none !important;
+}
+
+.note h3 {
+    color: var(--primary) !important;
+}
+
+
+/* =========================================================
+   FILTROS - ALUMNOS / PROFESORES / APODERADOS / VISITAS
+   ========================================================= */
+
+.filters {
+    padding: 18px 20px !important;
+
+    background: var(--surface-soft) !important;
+
+    border-bottom: 1px solid var(--line) !important;
+}
+
+.filters label > span {
+    color: var(--primary) !important;
+
+    font-size: .76rem !important;
+    font-weight: 800 !important;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #CBD6DF !important;
+
+    border-radius: 9px !important;
+
+    background: #FFFFFF !important;
+
+    color: var(--text) !important;
+
+    transition:
+        border-color .16s ease,
+        box-shadow .16s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #9FB2C2 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none !important;
+
+    border-color: var(--school-yellow) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(244,201,40,.18) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9AA8B5;
+}
+
+
+/* =========================================================
+   TABLAS
+   ========================================================= */
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    width: 100%;
+}
+
+thead th {
+    background: var(--primary) !important;
+
+    color: #FFFFFF !important;
+
+    border: 0 !important;
+
+    padding: 13px 15px !important;
+
+    font-size: .72rem !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: .04em;
+
+    text-transform: uppercase;
+}
+
+thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tbody td {
+    padding: 15px !important;
+
+    border-bottom: 1px solid #E8EDF2 !important;
+
+    color: var(--text) !important;
+
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background .15s ease;
+}
+
+tbody tr:hover {
+    background: #FFFDF4 !important;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+.row-sub {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--text-light) !important;
+
+    font-size: .74rem !important;
+}
+
+.table-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+
+/* =========================================================
+   BADGES / ESTADOS
+   ========================================================= */
+
+.badge {
+    border-radius: 999px !important;
+
+    padding: 5px 10px !important;
+
+    font-size: .70rem !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   FORMULARIOS
+   ========================================================= */
+
+.form-grid {
+    gap: 18px !important;
+}
+
+.field {
+    gap: 7px !important;
+}
+
+.field > span:first-child {
+    color: var(--primary) !important;
+
+    font-size: .78rem !important;
+
+    font-weight: 800 !important;
+}
+
+.field-error {
+    color: var(--school-red) !important;
+
+    font-size: .72rem !important;
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login {
+    min-height: 100vh !important;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(244,201,40,.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(11,49,84,.12),
+            transparent 30%
+        ),
+        #F4F7FA !important;
+}
+
+.login-aside {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0B3154 0%,
+            #082640 100%
+        ) !important;
+
+    overflow: hidden;
+}
+
+.login-aside::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -160px;
+    bottom: -160px;
+
+    border-radius: 50%;
+
+    border: 55px solid rgba(244,201,40,.10);
+}
+
+.login-aside::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: -90px;
+    top: 30%;
+
+    border-radius: 50%;
+
+    background: rgba(244,201,40,.07);
+}
+
+.login-aside .brand {
+    border-bottom-color: rgba(244,201,40,.55) !important;
+}
+
+.login-aside h1 {
+    color: #FFFFFF !important;
+
+    font-size: clamp(2.2rem, 4vw, 3.7rem) !important;
+
+    line-height: 1.02 !important;
+
+    letter-spacing: -.05em !important;
+}
+
+.login-aside p {
+    color: rgba(255,255,255,.70) !important;
+
+    max-width: 450px;
+
+    line-height: 1.7;
+}
+
+.eyebrow {
+    color: var(--school-yellow) !important;
+
+    font-weight: 850 !important;
+
+    letter-spacing: .10em !important;
+
+    text-transform: uppercase;
+}
+
+.login-main {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(244,201,40,.08),
+            transparent 30%
+        );
+}
+
+.login-box {
+    width: min(100%, 460px) !important;
+
+    padding: 38px !important;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid var(--line) !important;
+
+    border-radius: 18px !important;
+
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.login-box h2 {
+    color: var(--primary) !important;
+
+    font-size: 1.8rem !important;
+
+    font-weight: 850 !important;
+
+    letter-spacing: -.03em;
+}
+
+.login-box > p {
+    color: var(--text-light) !important;
+}
+
+.login-help {
+    margin-top: 18px !important;
+
+    padding: 12px 14px !important;
+
+    border-left: 3px solid var(--school-yellow) !important;
+
+    border-radius: 6px !important;
+
+    background: #FFFDF2 !important;
+
+    color: var(--text-light) !important;
+
+    font-size: .76rem !important;
+
+    line-height: 1.5;
+}
+
+#login-form .primary {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   REGISTRO DE VISITA - WIZARD
+   ========================================================= */
+
+.wizard-layout {
+    gap: 20px !important;
+}
+
+.steps {
+    padding: 8px !important;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--line);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.steps button {
+    min-height: 48px;
+
+    margin: 2px 0;
+
+    padding: 9px 10px !important;
+
+    border-radius: 9px !important;
+
+    color: var(--text-light) !important;
+
+    font-size: .78rem;
+}
+
+.steps button:hover {
+    background: var(--primary-soft) !important;
+
+    color: var(--primary) !important;
+}
+
+.steps button.active {
+    background:
+        linear-gradient(
+            90deg,
+            #FFF8D9,
+            #FFFDF2
+        ) !important;
+
+    color: var(--primary) !important;
+
+    box-shadow:
+        inset 3px 0 0 var(--school-yellow);
+}
+
+.step-num {
+    width: 30px !important;
+    height: 30px !important;
+
+    background: #EDF2F6 !important;
+
+    color: var(--text-light) !important;
+
+    font-weight: 800;
+}
+
+.steps button.active .step-num {
+    background: var(--school-yellow) !important;
+
+    color: var(--primary) !important;
+}
+
+.wizard-progress {
+    height: 7px !important;
+
+    background: #E8EDF2 !important;
+}
+
+.wizard-progress span {
+    background:
+        linear-gradient(
+            90deg,
+            #0B3154,
+            #F4C928
+        ) !important;
+
+    border-radius: 0 10px 10px 0;
+}
+
+.form-section {
+    padding: 30px !important;
+}
+
+.form-section > h2 {
+    color: var(--primary) !important;
+
+    font-size: 1.35rem !important;
+
+    font-weight: 850 !important;
+}
+
+.form-section > p {
+    margin-bottom: 22px !important;
+
+    color: var(--text-light) !important;
+}
+
+.wizard-foot {
+    background: #FAFBFC !important;
+
+    border-top: 1px solid var(--line) !important;
+}
+
+.wizard-foot small {
+    color: var(--text-light) !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TARJETAS DE FAMILIA / CONTEXTO
+   ========================================================= */
+
+.context-card,
+.family-card {
+    border: 1px solid #E4D88C !important;
+
+    border-radius: 12px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF3,
+            #FFF9DD
+        ) !important;
+
+    box-shadow: none !important;
+}
+
+.family-card h3 {
+    color: var(--primary) !important;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(244,201,40,.35);
+}
+
+
+/* =========================================================
+   MENSAJES / ESTADOS VACÍOS
+   ========================================================= */
+
+.empty {
+    padding: 45px 25px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F8FAFC
+        ) !important;
+
+    border: 1px dashed #C8D5DF !important;
+
+    border-radius: 14px !important;
+}
+
+.empty h3 {
+    color: var(--primary) !important;
+}
+
+.empty p {
+    color: var(--text-light) !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    margin-top: 30px !important;
+
+    padding: 18px 4px !important;
+
+    color: #82909D !important;
+
+    border-top: 1px solid var(--line) !important;
+
+    font-size: .72rem !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .wizard-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .steps {
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 5px !important;
+    }
+
+    .steps button {
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        min-height: 45px;
+    }
+
+    .steps button .step-num {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    .login-box {
+        padding: 25px !important;
+
+        border-radius: 14px !important;
+    }
+
+    .form-section {
+        padding: 20px !important;
+    }
+
+    .wizard-foot {
+        flex-direction: column;
+
+        align-items: stretch !important;
+    }
+
+    .wizard-foot .actions {
+        display: flex;
+
+        gap: 8px;
+    }
+
+    .wizard-foot .actions button {
+        flex: 1;
+    }
+
+    .steps {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .steps button {
+        justify-content: flex-start !important;
+
+        text-align: left !important;
+    }
+
+    .table-actions {
+        flex-direction: column;
+    }
+
+    .table-actions .button,
+    .table-actions button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ANIMACIONES SUAVES
+   ========================================================= */
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#content {
+    animation: pageFade .25s ease-out;
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(244,201,40,.45) !important;
+
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   AJUSTE FINAL — LOGIN IEP JOHANNES GUTENBERG
+   ========================================================= */
+
+.login {
+    grid-template-columns: 52% 48% !important;
+    min-height: 100vh;
+}
+
+/* PANEL IZQUIERDO */
+.login-aside {
+    position: relative !important;
+
+    padding: 42px 12% !important;
+
+    background:
+        radial-gradient(
+            circle at 0% 40%,
+            rgba(244, 201, 40, .10),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #0B3154 0%,
+            #082640 100%
+        ) !important;
+}
+
+/* Marca superior */
+.login-aside .brand {
+    padding: 0 0 18px !important;
+
+    border-bottom: 2px solid rgba(244, 201, 40, .80) !important;
+
+    width: min(100%, 670px);
+}
+
+.login-aside .brand-logo {
+    width: 64px !important;
+    height: 64px !important;
+
+    filter:
+        drop-shadow(0 4px 7px rgba(0,0,0,.25));
+}
+
+.login-aside .brand-text strong {
+    font-size: 1.08rem !important;
+}
+
+.login-aside .brand-text small {
+    font-size: .74rem !important;
+
+    color: rgba(255,255,255,.78) !important;
+}
+
+/* Texto principal */
+.login-aside > div:nth-child(2) {
+    position: relative;
+    z-index: 2;
+
+    max-width: 590px !important;
+}
+
+.login-aside .eyebrow {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 7px 11px;
+
+    border: 1px solid rgba(244,201,40,.28);
+
+    border-radius: 999px;
+
+    background: rgba(244,201,40,.08);
+
+    color: #F4C928 !important;
+
+    font-size: .70rem;
+
+    letter-spacing: .13em;
+}
+
+.login-aside h1 {
+    margin: 0 0 25px !important;
+
+    color: #FFFFFF !important;
+
+    font-size: clamp(2.7rem, 4.5vw, 4.5rem) !important;
+
+    line-height: .98 !important;
+
+    letter-spacing: -.055em !important;
+}
+
+.login-aside p {
+    max-width: 490px !important;
+
+    margin: 0 !important;
+
+    color: rgba(255,255,255,.74) !important;
+
+    font-size: 1rem !important;
+
+    line-height: 1.75 !important;
+}
+
+.login-aside footer {
+    color: rgba(255,255,255,.52) !important;
+}
+
+
+/* CÍRCULOS DECORATIVOS */
+.login-aside::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -190px;
+    bottom: -210px;
+
+    border: 50px solid rgba(244,201,40,.09);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.login-aside::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    left: -75px;
+    top: 29%;
+
+    border-radius: 50%;
+
+    background: rgba(244,201,40,.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PANEL DERECHO
+   ========================================================= */
+
+.login-main {
+    position: relative;
+
+    padding: 50px !important;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(244,201,40,.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #F7F9FB,
+            #EEF3F7
+        ) !important;
+}
+
+
+/* TARJETA */
+.login-box {
+    position: relative;
+
+    width: min(100%, 450px) !important;
+
+    padding: 40px !important;
+
+    border: 1px solid #D9E2E9 !important;
+
+    border-radius: 20px !important;
+
+    background: rgba(255,255,255,.97) !important;
+
+    box-shadow:
+        0 25px 60px rgba(11,49,84,.13),
+        0 5px 15px rgba(11,49,84,.05) !important;
+}
+
+
+/* PEQUEÑA BARRA DORADA SUPERIOR */
+.login-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 38px;
+
+    width: 70px;
+    height: 4px;
+
+    border-radius: 0 0 6px 6px;
+
+    background: #F4C928;
+}
+
+
+/* TITULO */
+.login-box .eyebrow {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: #C49A00 !important;
+
+    font-size: .68rem !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: .13em !important;
+
+    text-transform: uppercase;
+}
+
+.login-box h2 {
+    margin: 8px 0 8px !important;
+
+    color: #0B3154 !important;
+
+    font-size: 2rem !important;
+
+    font-weight: 850 !important;
+
+    letter-spacing: -.04em !important;
+}
+
+.login-box > p {
+    margin-bottom: 27px !important;
+
+    color: #71808E !important;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.login-box .field {
+    color: #0B3154 !important;
+
+    font-size: .78rem !important;
+
+    font-weight: 800 !important;
+}
+
+.login-box .field input {
+    min-height: 48px;
+
+    margin-top: 7px;
+
+    padding: 12px 14px !important;
+
+    border: 1px solid #CBD7E0 !important;
+
+    border-radius: 9px !important;
+
+    background: #FFFFFF !important;
+
+    color: #172B3D !important;
+}
+
+.login-box .field input:hover {
+    border-color: #9EB2C2 !important;
+}
+
+.login-box .field input:focus {
+    border-color: #F4C928 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(244,201,40,.16) !important;
+}
+
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+.login-box form > .primary {
+    position: relative;
+
+    min-height: 49px;
+
+    margin-top: 5px;
+
+    border: 0 !important;
+
+    border-radius: 9px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0B3154,
+            #104B77
+        ) !important;
+
+    box-shadow:
+        0 7px 16px rgba(11,49,84,.18) !important;
+
+    color: white !important;
+
+    font-weight: 800 !important;
+}
+
+.login-box form > .primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #082640,
+            #0B3154
+        ) !important;
+
+    box-shadow:
+        0 10px 22px rgba(11,49,84,.23) !important;
+}
+
+
+/* =========================================================
+   MENSAJE DE ERROR
+   ========================================================= */
+
+#login-error {
+    margin-bottom: 16px;
+}
+
+#login-error .error-banner,
+#login-error .error {
+    padding: 11px 13px !important;
+
+    border: 1px solid #F0C8C8 !important;
+
+    border-left: 4px solid #C92727 !important;
+
+    border-radius: 8px !important;
+
+    background: #FFF5F5 !important;
+
+    color: #A52222 !important;
+
+    font-size: .76rem !important;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   AYUDA
+   ========================================================= */
+
+.login-help {
+    margin-top: 21px !important;
+
+    padding: 13px 14px !important;
+
+    border: 1px solid rgba(244,201,40,.35) !important;
+
+    border-left: 4px solid #F4C928 !important;
+
+    border-radius: 8px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF4,
+            #FFF9DF
+        ) !important;
+
+    color: #6E7880 !important;
+
+    font-size: .73rem !important;
+
+    line-height: 1.55 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .login {
+        grid-template-columns: 1fr !important;
+    }
+
+    .login-aside {
+        min-height: auto !important;
+
+        padding: 28px 24px !important;
+    }
+
+    .login-aside > div:nth-child(2) {
+        display: none;
+    }
+
+    .login-aside footer {
+        display: none;
+    }
+
+    .login-main {
+        min-height: calc(100vh - 105px);
+
+        padding: 35px 20px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .login-aside {
+        padding: 22px 18px !important;
+    }
+
+    .login-aside .brand-logo {
+        width: 54px !important;
+        height: 54px !important;
+    }
+
+    .login-aside .brand-text strong {
+        font-size: .92rem !important;
+    }
+
+    .login-box {
+        padding: 30px 22px !important;
+
+        border-radius: 16px !important;
+    }
+
+    .login-box::before {
+        left: 22px;
+    }
+
+    .login-box h2 {
+        font-size: 1.65rem !important;
+    }
+}
+/* =========================================================
+   AJUSTE FINAL — LOGIN IEP JOHANNES GUTENBERG
+   ========================================================= */
+
+.login {
+    grid-template-columns: 52% 48% !important;
+    min-height: 100vh;
+}
+
+/* PANEL IZQUIERDO */
+.login-aside {
+    position: relative !important;
+
+    padding: 42px 12% !important;
+
+    background:
+        radial-gradient(
+            circle at 0% 40%,
+            rgba(244, 201, 40, .10),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #0B3154 0%,
+            #082640 100%
+        ) !important;
+}
+
+/* Marca superior */
+.login-aside .brand {
+    padding: 0 0 18px !important;
+
+    border-bottom: 2px solid rgba(244, 201, 40, .80) !important;
+
+    width: min(100%, 670px);
+}
+
+.login-aside .brand-logo {
+    width: 64px !important;
+    height: 64px !important;
+
+    filter:
+        drop-shadow(0 4px 7px rgba(0,0,0,.25));
+}
+
+.login-aside .brand-text strong {
+    font-size: 1.08rem !important;
+}
+
+.login-aside .brand-text small {
+    font-size: .74rem !important;
+
+    color: rgba(255,255,255,.78) !important;
+}
+
+/* Texto principal */
+.login-aside > div:nth-child(2) {
+    position: relative;
+    z-index: 2;
+
+    max-width: 590px !important;
+}
+
+.login-aside .eyebrow {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 7px 11px;
+
+    border: 1px solid rgba(244,201,40,.28);
+
+    border-radius: 999px;
+
+    background: rgba(244,201,40,.08);
+
+    color: #F4C928 !important;
+
+    font-size: .70rem;
+
+    letter-spacing: .13em;
+}
+
+.login-aside h1 {
+    margin: 0 0 25px !important;
+
+    color: #FFFFFF !important;
+
+    font-size: clamp(2.7rem, 4.5vw, 4.5rem) !important;
+
+    line-height: .98 !important;
+
+    letter-spacing: -.055em !important;
+}
+
+.login-aside p {
+    max-width: 490px !important;
+
+    margin: 0 !important;
+
+    color: rgba(255,255,255,.74) !important;
+
+    font-size: 1rem !important;
+
+    line-height: 1.75 !important;
+}
+
+.login-aside footer {
+    color: rgba(255,255,255,.52) !important;
+}
+
+
+/* CÍRCULOS DECORATIVOS */
+.login-aside::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -190px;
+    bottom: -210px;
+
+    border: 50px solid rgba(244,201,40,.09);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.login-aside::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    left: -75px;
+    top: 29%;
+
+    border-radius: 50%;
+
+    background: rgba(244,201,40,.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PANEL DERECHO
+   ========================================================= */
+
+.login-main {
+    position: relative;
+
+    padding: 50px !important;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(244,201,40,.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #F7F9FB,
+            #EEF3F7
+        ) !important;
+}
+
+
+/* TARJETA */
+.login-box {
+    position: relative;
+
+    width: min(100%, 450px) !important;
+
+    padding: 40px !important;
+
+    border: 1px solid #D9E2E9 !important;
+
+    border-radius: 20px !important;
+
+    background: rgba(255,255,255,.97) !important;
+
+    box-shadow:
+        0 25px 60px rgba(11,49,84,.13),
+        0 5px 15px rgba(11,49,84,.05) !important;
+}
+
+
+/* PEQUEÑA BARRA DORADA SUPERIOR */
+.login-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 38px;
+
+    width: 70px;
+    height: 4px;
+
+    border-radius: 0 0 6px 6px;
+
+    background: #F4C928;
+}
+
+
+/* TITULO */
+.login-box .eyebrow {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: #C49A00 !important;
+
+    font-size: .68rem !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: .13em !important;
+
+    text-transform: uppercase;
+}
+
+.login-box h2 {
+    margin: 8px 0 8px !important;
+
+    color: #0B3154 !important;
+
+    font-size: 2rem !important;
+
+    font-weight: 850 !important;
+
+    letter-spacing: -.04em !important;
+}
+
+.login-box > p {
+    margin-bottom: 27px !important;
+
+    color: #71808E !important;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.login-box .field {
+    color: #0B3154 !important;
+
+    font-size: .78rem !important;
+
+    font-weight: 800 !important;
+}
+
+.login-box .field input {
+    min-height: 48px;
+
+    margin-top: 7px;
+
+    padding: 12px 14px !important;
+
+    border: 1px solid #CBD7E0 !important;
+
+    border-radius: 9px !important;
+
+    background: #FFFFFF !important;
+
+    color: #172B3D !important;
+}
+
+.login-box .field input:hover {
+    border-color: #9EB2C2 !important;
+}
+
+.login-box .field input:focus {
+    border-color: #F4C928 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(244,201,40,.16) !important;
+}
+
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+.login-box form > .primary {
+    position: relative;
+
+    min-height: 49px;
+
+    margin-top: 5px;
+
+    border: 0 !important;
+
+    border-radius: 9px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0B3154,
+            #104B77
+        ) !important;
+
+    box-shadow:
+        0 7px 16px rgba(11,49,84,.18) !important;
+
+    color: white !important;
+
+    font-weight: 800 !important;
+}
+
+.login-box form > .primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #082640,
+            #0B3154
+        ) !important;
+
+    box-shadow:
+        0 10px 22px rgba(11,49,84,.23) !important;
+}
+
+
+/* =========================================================
+   MENSAJE DE ERROR
+   ========================================================= */
+
+#login-error {
+    margin-bottom: 16px;
+}
+
+#login-error .error-banner,
+#login-error .error {
+    padding: 11px 13px !important;
+
+    border: 1px solid #F0C8C8 !important;
+
+    border-left: 4px solid #C92727 !important;
+
+    border-radius: 8px !important;
+
+    background: #FFF5F5 !important;
+
+    color: #A52222 !important;
+
+    font-size: .76rem !important;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   AYUDA
+   ========================================================= */
+
+.login-help {
+    margin-top: 21px !important;
+
+    padding: 13px 14px !important;
+
+    border: 1px solid rgba(244,201,40,.35) !important;
+
+    border-left: 4px solid #F4C928 !important;
+
+    border-radius: 8px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF4,
+            #FFF9DF
+        ) !important;
+
+    color: #6E7880 !important;
+
+    font-size: .73rem !important;
+
+    line-height: 1.55 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .login {
+        grid-template-columns: 1fr !important;
+    }
+
+    .login-aside {
+        min-height: auto !important;
+
+        padding: 28px 24px !important;
+    }
+
+    .login-aside > div:nth-child(2) {
+        display: none;
+    }
+
+    .login-aside footer {
+        display: none;
+    }
+
+    .login-main {
+        min-height: calc(100vh - 105px);
+
+        padding: 35px 20px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .login-aside {
+        padding: 22px 18px !important;
+    }
+
+    .login-aside .brand-logo {
+        width: 54px !important;
+        height: 54px !important;
+    }
+
+    .login-aside .brand-text strong {
+        font-size: .92rem !important;
+    }
+
+    .login-box {
+        padding: 30px 22px !important;
+
+        border-radius: 16px !important;
+    }
+
+    .login-box::before {
+        left: 22px;
+    }
+
+    .login-box h2 {
+        font-size: 1.65rem !important;
+    }
+}
